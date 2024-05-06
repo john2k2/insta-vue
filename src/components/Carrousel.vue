@@ -1,29 +1,27 @@
 <script setup>
 import useUsers from "@/composables/useUsers";
+import { ref } from "vue";
+import { AnOutlinedArrowRight } from "@kalimahapps/vue-icons";
+import { AnOutlinedArrowLeft } from "@kalimahapps/vue-icons";
 
 const { users } = useUsers();
+
+let carousel = ref(null);
+
+const handleNext = () => {
+  carousel.value.scrollLeft += carousel.value.offsetWidth;
+};
+
+const handlePrev = () => {
+  carousel.value.scrollLeft -= carousel.value.offsetWidth;
+};
 </script>
 
 <template>
-  <div class="bg-black h-32 w-full pt-4">
-    <nav class="w-full overflow-auto justify-start ml-3 flex">
-      <ul class="flex gap-x-5 items-center justify-start">
-        <!--
-          codigo para app mobile el desktop, no lleva avatar arriba
-        -->
-        <!-- <div class="flex flex-col w-20 justify-center items-center gap-y-1 relative">
-          <img
-            class="rounded-full w-[60px] border-[2px] border-red-600"
-            src="https://randomuser.me/api/portraits/men/75.jpg"
-            alt="asdas" />
-          <span
-            class="w-4 h-4 bg-green-600 rounded-full absolute bottom-6 right-4 inline-flex items-center justify-center"
-            >2</span
-          >
-          <p class="text-white text-[14px]">Tu Historia</p>
-        </div> -->
-
-        <li class="w-[65px] flex flex-col gap-y-1" v-for="user in users" :key="user.login.uuid">
+  <div class="bg-black h-32 w-full pt-4 overflow-hidden relative">
+    <nav class="whitespace-nowrap overflow-x-auto scroll-smooth snap-x snap-mandatory" ref="carousel">
+      <ul class="flex gap-x-5 items-center justify-start pl-3">
+        <li class="w-[60px] flex flex-col gap-y-1" v-for="user in users" :key="user.login.uuid">
           <img
             :src="user.picture.thumbnail"
             :alt="user.name.first"
@@ -31,12 +29,16 @@ const { users } = useUsers();
           <p class="text-white truncate text-[15px]">{{ user.login.username }}</p>
         </li>
       </ul>
+      <div class="absolute top-1/3 inline-flex w-full px-3">
+        <span class="size-6 bg-white/45 rounded-full left-3 flex items-center absolute justify-center">
+          <AnOutlinedArrowLeft class="size-4 text-black cursor-pointer" @click="handlePrev" />
+        </span>
+        <span class="size-6 bg-white/45 rounded-full flex absolute right-3 items-center justify-center">
+          <AnOutlinedArrowRight class="size-4 text-black cursor-pointer" @click="handleNext" />
+        </span>
+      </div>
     </nav>
   </div>
 </template>
 
-<style scoped>
-
-
-
-</style>
+<style scoped></style>
