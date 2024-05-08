@@ -1,23 +1,6 @@
 <script setup>
-import { AnOutlinedArrowRight } from "@kalimahapps/vue-icons";
-import { AnOutlinedArrowLeft } from "@kalimahapps/vue-icons";
-import { ref } from "vue";
-
-const items = [
-  {
-    src: "https://picsum.photos/200/300",
-    alt: "imagen",
-  },
-  {
-    src: "https://picsum.photos/200/300",
-    alt: "imagen",
-  },
-  {
-    src: "https://picsum.photos/200/300",
-    alt: "imagen",
-  },
-];
-let carousel = ref(null);
+import { AkChevronRight } from "@kalimahapps/vue-icons";
+import { AkChevronLeft } from "@kalimahapps/vue-icons";
 
 const handleNext = () => {
   carousel.value.scrollLeft += carousel.value.offsetWidth;
@@ -26,24 +9,29 @@ const handleNext = () => {
 const handlePrev = () => {
   carousel.value.scrollLeft -= carousel.value.offsetWidth;
 };
+
+defineProps({
+  img: String,
+  alt: String,
+});
 </script>
 
 <template>
-  <section class="relative">
+  <section class="relative md:w-[550px] md:h-[550px] mx-auto">
     <div class="whitespace-nowrap overflow-x-auto scroll-smooth snap-x snap-mandatory" ref="carousel">
-      <div class="inline-block w-full" v-for="item in items" :key="item.src">
+      <div class="inline-block w-full">
         <img
-          :src="item.src"
-          :alt="item.alt"
-          class="max-w-[600px] w-full snap-start max-h-[600px] h-full object-cover mx-auto" />
+          :src="img"
+          :alt="alt"
+          class="max-w-[600px] w-full snap-start max-h-[600px] h-full object-center aspect-square mx-auto" />
       </div>
     </div>
     <div class="absolute top-1/2 inline-flex w-full justify-between px-3">
-      <span class="size-6 bg-white/45 rounded-full flex items-center justify-center">
-        <AnOutlinedArrowLeft class="size-4 text-black cursor-pointer" @click="handlePrev" />
+      <span class="size-6 bg-white/80 rounded-full flex items-center justify-center">
+        <AkChevronLeft class="size-4 text-black cursor-pointer" @click="handlePrev" />
       </span>
-      <span class="size-6 bg-white/45 rounded-full flex items-center justify-center">
-        <AnOutlinedArrowRight class="size-4 text-black cursor-pointer" @click="handleNext" />
+      <span class="size-6 bg-white/80 rounded-full flex items-center justify-center">
+        <AkChevronRight class="size-4 text-black cursor-pointer" @click="handleNext" />
       </span>
     </div>
   </section>

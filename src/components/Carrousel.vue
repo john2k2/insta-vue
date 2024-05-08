@@ -1,8 +1,8 @@
 <script setup>
 import useUsers from "@/composables/useUsers";
 import { ref } from "vue";
-import { AnOutlinedArrowRight } from "@kalimahapps/vue-icons";
-import { AnOutlinedArrowLeft } from "@kalimahapps/vue-icons";
+import { AkChevronRight } from "@kalimahapps/vue-icons";
+import { AkChevronLeft } from "@kalimahapps/vue-icons";
 
 const { users } = useUsers();
 
@@ -30,11 +30,11 @@ const handlePrev = () => {
         </li>
       </ul>
       <div class="absolute top-1/3 inline-flex w-full px-3">
-        <span class="size-6 bg-white/45 rounded-full left-3 flex items-center absolute justify-center">
-          <AnOutlinedArrowLeft class="size-4 text-black cursor-pointer" @click="handlePrev" />
+        <span class="size-6 bg-white/75 rounded-full left-3 flex items-center absolute justify-center">
+          <AkChevronLeft class="size-4 text-black cursor-pointer" @click="handlePrev" />
         </span>
-        <span class="size-6 bg-white/45 rounded-full flex absolute right-3 items-center justify-center">
-          <AnOutlinedArrowRight class="size-4 text-black cursor-pointer" @click="handleNext" />
+        <span class="size-6 bg-white/75 rounded-full flex absolute right-3 items-center justify-center">
+          <AkChevronRight class="size-4 text-black cursor-pointer" @click="handleNext" />
         </span>
       </div>
     </nav>
