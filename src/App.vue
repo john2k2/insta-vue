@@ -8,7 +8,7 @@ import NavbarBar from "@/components/NavbarBar.vue";
   <Navbar class="md:hidden" />
   <div class="md:grid md:grid-cols-12">
     <NavbarBar class="md:flex hidden fixed top-0 bottom-0 left-0 md:col-span-1" />
-    <RouterView class="md:w-full md:col-span-11 md:ml-20" />
+    <RouterView class="md:w-full md:col-span-11 md:ml-20 2xl:col-span-10" />
   </div>
   <Footer class="fixed bottom-0" />
 </template>

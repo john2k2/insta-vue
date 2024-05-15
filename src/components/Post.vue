@@ -12,8 +12,8 @@ const { posts, isLoaded } = usePost();
 
 <template>
   <article v-for="post in posts" :key="post.id">
-    <div class="flex w-11/12 md:w-[550px] mb-4 mx-auto">
-      <img :src="post.avatar" class="size-6 rounded-full" alt="imagen" />
+    <div class="flex w-11/12 md:w-[550px] mb-4 2xl:my-6 mx-auto items-center">
+      <img :src="post.avatar" class="size-6 2xl:size-10 rounded-full" alt="imagen" />
       <p class="text-white ml-2">{{ post.nickname }}</p>
       <AkMoreHorizontalFill class="size-6 text-white ml-auto" />
     </div>
