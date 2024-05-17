@@ -18,18 +18,15 @@ const handlePrev = () => {
 </script>
 
 <template>
-  <div class="h-32 w-full pt-4 overflow-hidden relative md:max-w-[730px] md:mx-auto">
+  <div class="h-32 pt-4 overflow-hidden relative max-w-[630px] mx-auto">
     <nav class="whitespace-nowrap overflow-x-auto scroll-smooth snap-x snap-mandatory" ref="carousel">
-      <ul class="flex gap-x-5 items-center justify-start pl-3 2xl:gap-x-3 2xl:pl-1">
-        <li
-          class="w-[60px] md:w-[70px] 2xl:w-[80px] flex flex-col gap-y-1"
-          v-for="user in users"
-          :key="user.login.uuid">
+      <ul class="flex gap-x-[1rem] items-center justify-start">
+        <li class="min-w-[64px] flex flex-col gap-y-1" v-for="user in users" :key="user.login.uuid">
           <img
             :src="user.picture.thumbnail"
             :alt="user.name.first"
             class="rounded-full object-cover border-[3px] border-red-600 w-full cursor-pointer" />
-          <p class="text-white truncate w-[80px] text-[14px]">{{ user.login.username }}</p>
+          <p class="text-white truncate w-[66px] text-[14px]">{{ user.login.username }}</p>
         </li>
       </ul>
       <div class="absolute top-1/3 inline-flex w-full px-3">

@@ -11,26 +11,28 @@ const { posts, isLoaded } = usePost();
 </script>
 
 <template>
-  <article v-for="post in posts" :key="post.id">
-    <div class="flex w-11/12 md:w-[550px] mb-4 2xl:my-6 mx-auto items-center">
-      <img :src="post.avatar" class="size-6 2xl:size-10 rounded-full" alt="imagen" />
-      <p class="text-white ml-2">{{ post.nickname }}</p>
+  <article v-for="post in posts" :key="post.id" class="w-[488px] mx-auto">
+    <div class="flex mb-4 2xl:my-6 items-center">
+      <img :src="post.avatar" class="size-8 2xl:size-10 rounded-full" alt="imagen" />
+      <p class="text-white text-sm ml-2">{{ post.nickname }}</p>
       <AkMoreHorizontalFill class="size-6 text-white ml-auto" />
     </div>
     <CarrouselPost :img="post.imageUrl" :alt="post.nickname" />
-    <div class="flex w-11/12 md:w-[550px] mx-auto my-3">
+    <div class="flex mx-auto my-1">
       <div class="flex gap-x-2">
-        <Favorite class="size-8" />
-        <FeMessageCircle class="size-8 text-white cursor-pointer" />
-        <IconPrivateMessage class="cursor-pointer size-8" />
+        <Favorite class="size-6" />
+        <FeMessageCircle class="size-6 text-white cursor-pointer" />
+        <IconPrivateMessage class="cursor-pointer size-6" />
       </div>
       <IconSave class="text-white ml-auto cursor-pointer size-8" />
     </div>
-    <div class="my-4 w-11/12 md:w-[550px] mb-4 mx-auto flex flex-col items-start justify-center">
+    <div class="mb-4 mx-auto flex flex-col items-start justify-center">
       <h3 class="text-white my-3 font-bold">{{ post.likes }} Me gusta</h3>
       <div class="grid grid-cols-nickname-body gap-x-2 w-full">
-        <h3 class="text-white text-xl font-bold">{{ post.nickname }}</h3>
-        <div class="text-white w-full text-pretty truncate-3-lines">{{ post.body }}</div>
+        <div class="text-white w-full text-pretty truncate-3-lines">
+          <span>{{ post.nickname }}</span>
+          {{ post.body }}
+        </div>
       </div>
       <h3 class="text-gray-400 mt-2">Ver los 3 comentarios</h3>
     </div>

@@ -17,7 +17,7 @@ defineProps({
 </script>
 
 <template>
-  <section class="relative md:w-[550px] md:h-[550px] mx-auto">
+  <section class="relative md:w-[488px] h-auto mx-auto">
     <div class="whitespace-nowrap overflow-x-auto scroll-smooth snap-x snap-mandatory" ref="carousel">
       <div class="inline-block w-full">
         <img

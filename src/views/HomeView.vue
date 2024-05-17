@@ -4,7 +4,7 @@ import Post from "@/components/Post.vue";
 </script>
 
 <template>
-  <main class="w-full 2xl:mt-5">
+  <main class="2xl:mt-5">
     <Carrousel />
     <Post />
   </main>
