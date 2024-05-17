@@ -14,7 +14,7 @@ import IconTrends from "./icons/IconTrends.vue";
 </script>
 
 <template>
-  <nav class="h-screen border-r-[1px] border-white/5 py-10 px-3 flex flex-col items-center 2xl:items-start">
+  <nav class="h-screen border-r-[1px] border-white/15 py-10 px-3 flex flex-col items-center 2xl:items-start">
     <div class="hover:bg-white/5 rounded-md p-3 mb-5 2xl:hover:bg-white/0">
       <RouterLink to="/">
         <AkInstagramFill class="size-6 2xl:hidden text-white" />

@@ -11,7 +11,7 @@ const { posts, isLoaded } = usePost();
 </script>
 
 <template>
-  <article v-for="post in posts" :key="post.id" class="w-[488px] mx-auto">
+  <article v-for="post in posts" :key="post.id" class="max-w-[488px] mx-auto">
     <div class="flex mb-4 2xl:my-6 items-center">
       <img :src="post.avatar" class="size-8 2xl:size-10 rounded-full" alt="imagen" />
       <p class="text-white text-sm ml-2">{{ post.nickname }}</p>

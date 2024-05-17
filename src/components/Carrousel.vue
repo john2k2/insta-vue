@@ -21,7 +21,7 @@ const handlePrev = () => {
   <div class="h-32 pt-4 overflow-hidden relative max-w-[630px] mx-auto">
     <nav class="whitespace-nowrap overflow-x-auto scroll-smooth snap-x snap-mandatory" ref="carousel">
       <ul class="flex gap-x-[1rem] items-center justify-start">
-        <li class="min-w-[64px] flex flex-col gap-y-1" v-for="user in users" :key="user.login.uuid">
+        <li class="w-16 flex flex-col gap-y-1" v-for="user in users" :key="user.login.uuid">
           <img
             :src="user.picture.thumbnail"
             :alt="user.name.first"

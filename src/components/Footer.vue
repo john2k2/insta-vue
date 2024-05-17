@@ -9,11 +9,11 @@ import IconHome from "./icons/IconHome.vue";
 <template>
   <footer class="sticky buttom-0 w-full bg-black mx-auto p-4 border-t-[1px] border-white/45 md:hidden">
     <div class="flex bg-black w-11/12 mx-auto items-center justify-between">
-      <IconHome class="size-6 text-white cursor-pointer" />
-      <IconExplore class="size-6 text-white cursor-pointer" />
-      <IconReels class="size-6 text-white cursor-pointer" />
-      <IconAddPost class="size-6 text-white cursor-pointer" />
-      <IconMessenger class="size-6 text-white cursor-pointer" />
+      <IconHome class="size-5 text-white cursor-pointer" />
+      <IconExplore class="size-5 text-white cursor-pointer" />
+      <IconReels class="size-5 text-white cursor-pointer" />
+      <IconAddPost class="size-5 text-white cursor-pointer" />
+      <IconMessenger class="size-5 text-white cursor-pointer" />
       <div>
         <img src="https://picsum.photos/200/300" class="size-6 rounded-full cursor-pointer" alt="imagen" />
       </div>
