@@ -1,21 +1,33 @@
 <script setup>
-import Navbar from "@/components/Navbar.vue";
-import Footer from "@/components/Footer.vue";
-import NavbarBar from "@/components/NavbarBar.vue";
+import { ref, watchEffect } from "vue";
+import { useRoute } from "vue-router";
+import Default from "@/layouts/Default.vue";
+import EmptyLayout from "@/layouts/EmptyLayout.vue";
 
-import useUsers from "./composables/useUsers";
-import { RouterLink } from "vue-router";
+const layout = ref(Default);
 
-const { users } = useUsers();
+const route = useRoute();
+
+watchEffect(() => {
+  let layoutComponent = route.meta.layout;
+  if (layoutComponent === "Default") {
+    layout.value = Default;
+  } else if (layoutComponent === "EmptyLayout") {
+    layout.value = EmptyLayout;
+  }
+
+  if (layoutComponent === undefined) {
+    layout.value = Default; // Aquí está la corrección
+  }
+});
 </script>
 
 <template>
-  <Navbar class="md:hidden" />
-  <div class="md:flex">
-    <NavbarBar class="md:sticky top-0 hidden md:block 2xl:w-1/6" />
-    <RouterView class="flex-grow" />
-  </div>
-  <Footer class="fixed bottom-0" />
+  <component :is="layout">
+    <RouterView v-slot="{ Component }">
+      <component :is="Component" />
+    </RouterView>
+  </component>
 </template>
 
 <style scoped></style>
