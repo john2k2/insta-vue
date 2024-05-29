@@ -21,8 +21,8 @@ import IconTrends from "./icons/IconTrends.vue";
         <IconInstagram class="hidden 2xl:block text-white 2xl:w-28" />
       </RouterLink>
     </div>
-    <div class="h-full flex flex-col justify-between">
-      <ul class="flex flex-col items-center 2xl:items-start h-full gap-y-1">
+    <div class="h-full flex flex-col justify-between md:justify-start md:items-start">
+      <ul class="flex flex-col items-center 2xl:items-start h-full gap-y-1 w-full">
         <li class="hover:bg-white/10 rounded-md p-3 2xl:w-full flex items-center cursor-pointer justify-start">
           <RouterLink to="/">
             <IconHome class="size-6" />

@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-  <slot />
+  <main class="bg-white">
+    <slot />
+  </main>
 </template>
 
 <style scoped></style>
