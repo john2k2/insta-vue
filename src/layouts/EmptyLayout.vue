@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <main class="bg-white">
+  <main>
     <slot />
   </main>
 </template>
